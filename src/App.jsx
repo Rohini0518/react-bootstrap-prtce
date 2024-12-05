@@ -3,7 +3,7 @@ import './App.css'
 function App() {
 
   return (
-     <div className='d-flex flex-row flex-wrap p-3 .justify-content-between w-100 mb-3  align-items-center border border-success'> 
+     <div className='d-flex flex-row flex-wrap p-3 justify-content-between w-100 mb-3  align-items-center border border-success'> 
     <h1 className="ms-auto mx-2 text-primary flex-grow-1">Welcome</h1>
     <h1 className="mx-2 text-danger">Hello world</h1>
 
