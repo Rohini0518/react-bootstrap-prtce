@@ -1,4 +1,5 @@
 import './App.css'
+import GridPractice from './assets/gridpractice'
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
     <button className='btn px-2 m-3 btn-primary' >Start</button>
     <button className='btn px-2 btn-warning' >Log in</button>
-
+    <GridPractice/>
     </div>
   )
 }
