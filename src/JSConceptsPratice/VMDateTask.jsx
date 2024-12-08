@@ -17,13 +17,10 @@ export default function DatePractice() {
     return timeinhours;
   };
   // task-3 Try count down timer based on available seconds.
-  const [timer, setTimer] = useState(secondsToTime(10));
+  const [timer,setTimer]=useState(0)
 
-  const secondsCountDown = (seconds) => {
-    // const [timer,setTimer]=useState(secondsToTime(seconds))
-
+  const startCountDown = (seconds) => {
     let remainingSeconds = seconds;
-
     const interval = setInterval(() => {
       remainingSeconds -= 1;
       if (remainingSeconds <= 0) {
@@ -39,20 +36,13 @@ export default function DatePractice() {
     <div>
       <h1>{now.format()}</h1>
       <h2>
-        {"seconds-"}
-        {end.diff(start, "seconds")}
-      </h2>
-      <h2>
-        {"minutes-"}
-        {end.diff(start, "minutes")}
-      </h2>
-      <h2>
         {"Hours-"}
         {end.diff(start, "hours")}
       </h2>{" "}
       {/* task-1.Learn how to find the number of hours difference between two dates. */}
       <h2>{secondsToTime(12550)}</h2>
-      <p>{secondsCountDown(10)}</p>
+      {/* task-4 */}
+      <button type="button" className="btn btn-danger" onClick={() => startCountDown(10)}>Start Countdown</button>
       <p>{timer}</p>
     </div>
   );
