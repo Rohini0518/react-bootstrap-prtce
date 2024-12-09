@@ -32,6 +32,16 @@ export default function DatePractice() {
     }, 1000);
   };
 
+  // task-4 date is falls under this week
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <h1>{now.format()}</h1>

@@ -1,15 +1,19 @@
 import './App.css'
-import FlexPratice from './Bootstrap.jsx/FlexPratice'
-import GridPractice from './Bootstrap.jsx/GridPractice'
+import FlexPratice from './BootstrapPractice/FlexPratice'
+import GridPractice from './BootstrapPractice/GridPractice'
+import DatePractice from './JSConceptsPratice/DatePractice'
 import VMDateTask from './JSConceptsPratice/VMDateTask'
+import TailwindStart from './TailwindPratice/TailwindStart'
 
 function App() {
 
   return (
     <div>
     <FlexPratice/>
-    <GridPractice/>
-    <VMDateTask />
+    {/* <GridPractice/> */}
+    <DatePractice/>
+    {/* <VMDateTask /> */}
+    <TailwindStart/>
     </div>
   )
 }
