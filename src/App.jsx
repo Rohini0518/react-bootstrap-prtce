@@ -4,16 +4,18 @@ import GridPractice from "./BootstrapPractice/GridPractice";
 import DatePractice from "./JSConceptsPratice/DatePractice";
 import VMDateTask from "./JSConceptsPratice/VMDateTask";
 import TailwindStart from "./TailwindPratice/TailwindStart";
+import LandingPage from "./VMgamifiedTailwind/Pages/LandingPage";
 
 function App() {
   return (
     <div>
       <h1>REACT ❤️ 🎁🎖️🏆 </h1>
-      <FlexPratice />
+      <LandingPage/>
+      {/* <FlexPratice /> */}
       {/* <GridPractice/> */}
-      <DatePractice />
+      {/* <DatePractice /> */}
       {/* <VMDateTask /> */}
-      <TailwindStart />
+      {/* <TailwindStart /> */}
     </div>
   );
 }
