@@ -12,7 +12,7 @@ function App() {
     <div>
       <h1>REACT ❤️ 🎁🎖️🏆 </h1>
       <YouTubeVideo/>
-      <LandingPage/>
+      {/* <LandingPage/> */}
       {/* <FlexPratice /> */}
       {/* <GridPractice/> */}
       {/* <DatePractice /> */}
