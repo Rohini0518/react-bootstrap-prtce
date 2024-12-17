@@ -4,7 +4,7 @@ import YouTube from "react-youtube";
 
 export default function YouTubeVideo() {
   const playerRef = useRef(null);
-  const [currentTime, setCurrentTime] = useState(0); 
+  const [currentTime, setCurrentTime] = useState(0);
   const [videoEnded, setVideoEnded] = useState(false);
 
   const opts = {
@@ -16,21 +16,20 @@ export default function YouTubeVideo() {
   };
   const onReady = (event) => {
     playerRef.current = event.target;
-
   };
- const onPause=(event)=>{
-  console.log(event.target.getCurrentTime())
-  setCurrentTime(event.target.getCurrentTime())
- }
+  const onPause = (event) => {
+    console.log(event.target.getCurrentTime());
+    setCurrentTime(event.target.getCurrentTime());
+  };
 
- const handleResume=(event)=>{
-  playerRef.current.seekTo(50);
-  playerRef.current.playVideo();
- }
+  const handleResume = (event) => {
+    playerRef.current.seekTo(50);
+    playerRef.current.playVideo();
+  };
 
-function onEnd(event){
-  setVideoEnded(true);
- }
+  function onEnd(event) {
+    setVideoEnded(true);
+  }
 
   const handlePlay = () => {
     playerRef.current.playVideo();
@@ -48,30 +47,28 @@ function onEnd(event){
     playerRef.current.seekTo(0);
     playerRef.current.playVideo();
     setVideoEnded(false);
-
   };
   const handleVolumeUp = () => {
-      const currentVolume = playerRef.current.getVolume(); 
-      const newVolume = Math.min(currentVolume + 10, 100); 
-      playerRef.current.setVolume(newVolume);
-      console.log("Volume Up:", newVolume);
+    const currentVolume = playerRef.current.getVolume();
+    const newVolume = Math.min(currentVolume + 10, 100);
+    playerRef.current.setVolume(newVolume);
+    console.log("Volume Up:", newVolume);
   };
   const handleVolumeDown = () => {
-  const currentVolume=playerRef.current.getVolume();
-  const newVolume=Math.max(currentVolume-10,0);
-  playerRef.current.setVolume(newVolume);
-};
+    const currentVolume = playerRef.current.getVolume();
+    const newVolume = Math.max(currentVolume - 10, 0);
+    playerRef.current.setVolume(newVolume);
+  };
 
- const handleForward=()=>{
-  const newTime = playerRef.current.getCurrentTime() + 10; // Add 10 seconds
-  playerRef.current.seekTo(newTime,true);
-  playerRef.current.playVideo();
- }
- const handleBackward=()=>{
-  const newTime=playerRef.current.getCurrentTime()-10;
-  playerRef.current.seekTo(newTime,true);
-
- }
+  const handleForward = () => {
+    const newTime = playerRef.current.getCurrentTime() + 10; // Add 10 seconds
+    playerRef.current.seekTo(newTime, true);
+    playerRef.current.playVideo();
+  };
+  const handleBackward = () => {
+    const newTime = playerRef.current.getCurrentTime() - 10;
+    playerRef.current.seekTo(newTime, true);
+  };
   const regularButtons = [
     { label: "Play", onClick: handlePlay },
     { label: "Pause", onClick: handlePause },
@@ -79,35 +76,37 @@ function onEnd(event){
     { label: "Resume Timestamp", onClick: handleResume },
     { label: "👉 Forward", onClick: handleForward },
     { label: "👈 Backward", onClick: handleBackward },
-    { label: "VolumeUp", onClick: handleVolumeUp },
-    { label: "VolumeDown", onClick: handleVolumeDown },
-
-    
-
+    { label: "👆 VolumeUp", onClick: handleVolumeUp },
+    { label: " 👇VolumeDown", onClick: handleVolumeDown },
     ,
   ];
 
   return (
     <div>
-      <YouTube videoId="A5QEcmWLDVM" opts={opts} onReady={onReady} onEnd={onEnd} onPause={onPause}/>
-      {videoEnded && <button
-            onClick={handleRepeat}
-            className="rounded border bg-red-500 p-2 m-4 hover:text-yellow-300"
-          >
-            Repeat
-          </button>}
-
+      <YouTube
+        videoId="A5QEcmWLDVM"
+        opts={opts}
+        onReady={onReady}
+        onEnd={onEnd}
+        onPause={onPause}
+      />
+      {videoEnded && (
+        <button
+          onClick={handleRepeat}
+          className="btn btn-danger m-2 text-white"
+        >
+          Repeat
+        </button>
+      )}
       {regularButtons.map((button, index) => (
-      <button
-        key={index}
-        onClick={button.onClick}
-        className="m-4 text-red-700 font-bold py-2 px-4 border border-blue-500 rounded hover:bg-red-500 hover:text-yellow-300"
-      >
-        {button.label}
-      </button>
-    ))}
-     
-    
+        <button
+          key={index}
+          onClick={button.onClick}
+          className="btn btn-outline-primary fw-bold m-2 "
+        >
+          {button.label}
+        </button>
+      ))}
     </div>
   );
 }
